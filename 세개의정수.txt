@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+void main()
+{   
+    int a, b, c;
+    int result = 0;
+    
+    while(1)
+    {
+    printf("숫자 세 개 입력 : ");
+    scanf("%d %d %d", &a, &b, &c);
+    
+    if(c == 0)
+    {
+        printf("c는 0이 아닌 숫자를 입력하세요.\n");
+    }
+    
+    else break;
+    
+    }
+    
+    result = (a + b) * c - (a - b) / c;
+    
+    printf("입력받은 숫자 : ");
+    printf("%d, %d, %d\n", a, b, c);
+    printf("%d", result);
+}
