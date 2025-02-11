@@ -1,0 +1,42 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+void main()
+{
+    int inum, one, ten, hun, hap;
+    
+    printf("Input Number. (0 ~ 999)\n");
+    scanf("%d", &inum);
+    
+    if (inum < 0 || inum > 999){
+        printf("Input Error.\n");
+    } else {
+        if ((inum % 3 == 0) && (inum % 2 == 0)){
+            printf("1. Special Number\n");
+        }
+        one = inum % 10;
+        ten = inum / 10 % 10;
+        hun = inum / 100;
+        hap = one + ten + hun;
+        
+        if (hap % 7 == 0){
+            printf("2. Special Number\n");
+        }
+        if (hun != 0){
+            if (hun > one){
+                printf("3. Special Number\n");
+            }
+        } else {
+            if (ten > one){
+                printf("3. Special Number\n");
+            }
+        }
+    }
+}

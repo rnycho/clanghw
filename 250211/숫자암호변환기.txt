@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+void main()
+{
+    int inum;
+    printf("Input Number. 0 ~ 9");
+    scanf("%d", &inum);
+
+    switch(inum){
+        case 0:
+            printf("A\n");
+            break;
+        case 1:
+            printf("B\n");
+            break;
+        case 2:
+            printf("C\n");
+            break;
+        case 3:
+            printf("D\n");
+            break;
+        case 4:
+            printf("E\n");
+            break;
+        case 5:
+            printf("F\n");
+            break;
+        case 6:
+            printf("G\n");
+            break;
+        case 7:
+            printf("H\n");
+            break;
+        case 8:
+            printf("I\n");
+            break;
+        case 9:
+            printf("J\n");
+            break;
+        default:
+            printf("잘못된 입력입니다!\n")
+        
+    }
+}

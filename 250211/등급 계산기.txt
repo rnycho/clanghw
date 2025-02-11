@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void main()
+{
+    int inum;
+    printf("Input Score. 0 ~ 100\n");
+    scanf("%d", &inum);
+
+    switch(inum / 10){
+        case 10: case 9:
+            printf("A Grade\n");
+            printf("Bonus : %f\n", inum * 1.1);
+            break;
+        case 8:
+            printf("B Grade");
+            printf("Bonus : %f\n", inum * 1.05);
+            break;
+        case 7:
+            printf("C Grade\n");
+            printf("Bonus : None\n");
+            break;
+        case 6:
+            printf("D Grade\n");
+            printf("Bonus : None\n");
+            break;
+        default:
+            printf("F Grade\n");
+            printf("Bonus : None\n");
+    }
+}
