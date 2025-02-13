@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+void main()
+{   
+    int m, n;
+    int seven = 0;
+
+    printf("정수 M, N 입력 (단, M <= N) : ");
+    scanf("%d %d", &m, &n);
+    
+    if (m > n){
+        printf("지시를 따르지 않아 종료합니다.");
+    } else{
+        for (int i = m; i <= n; i++){
+            int j = i;
+            for (;;){
+                if (j == 0){
+                    break;
+                } else if (j % 10 == 7){
+                    seven = 1;
+                    break;
+                } else{
+                    j /= 10;
+                    continue;
+                }
+            }
+            if (i % 7 == 0 || seven == 1){
+                seven = 0;
+                continue;
+            } else if (i % 5 == 0) {
+                printf("%d\n", i);
+                break;
+            } else{
+                printf("%d\n",i);
+            }
+        seven = 0;
+        }
+    }
+}
