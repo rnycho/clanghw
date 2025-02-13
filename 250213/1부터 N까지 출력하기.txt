@@ -11,4 +11,5 @@ void main()
         i += 1;
         n -= 1;
         printf("%d ", i);
+    }
 }
