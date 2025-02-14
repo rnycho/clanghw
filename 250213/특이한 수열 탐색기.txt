@@ -8,15 +8,15 @@ void main()
     printf("정수 M, N 입력 (단, M <= N) : ");
     scanf("%d %d", &m, &n);
     
-    if (m > n){
+    if (m > n) {
         printf("지시를 따르지 않아 종료합니다.");
     } else{
-        for (int i = m; i <= n; i++){
+        for (int i = m; i <= n; i++) {
             int j = i;
             for (;;){
                 if (j == 0){
                     break;
-                } else if (j % 10 == 7){
+                } else if (j % 10 == 7) {
                     seven = 1;
                     break;
                 } else{
@@ -24,7 +24,7 @@ void main()
                     continue;
                 }
             }
-            if (i % 7 == 0 || seven == 1){
+            if (i % 7 == 0 || seven == 1) {
                 seven = 0;
                 continue;
             } else if (i % 5 == 0) {
