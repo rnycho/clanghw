@@ -3,27 +3,34 @@
 void main()
 {
     int arr[] = {64, 25, 12, 22, 11};
+    int *ptr = arr;
     int temp;
     
-    printf("초 기 : 64 25 12 22 11\n");
-	
-	for (int i = 0; i < 4; i++) {
-		int min = i;
-		
-		for (int j = i + 1; j < 5; j++) {
-			if (arr[j] < arr[min]) {
-				min = j;
-			}
-		}
-		
-		temp = arr[i];
-		arr[i] = arr[min];
-		arr[min] = temp;
+    printf("초 기 : ");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", *(ptr + i));
+    }
+    printf("\n");
+    
+    for (int i = 0; i < 4; i++) {
+        int *minAddr = ptr + i;
 
-		printf("%d회차 : ", i + 1);
-    	for (int i = 0; i < 5; i++) {
-    		printf("%d ", arr[i]);
-    	}
-    	printf("\n");
-	}
+        for (int j = i + 1; j < 5; j++) {
+            if (*(ptr + j) < *minAddr) {
+                minAddr = ptr + j;
+            }
+        }
+
+        if (*minAddr != *(ptr + i)) {
+            temp = *(ptr + i);
+            *(ptr + i) = *minAddr;
+            *(minAddr) = temp;
+        }
+
+        printf("%d회차 : ", i + 1);
+        for (int k = 0; k < 5; k++) {
+            printf("%d ", *(ptr + k));
+        }
+        printf("\n");
+    }
 }
