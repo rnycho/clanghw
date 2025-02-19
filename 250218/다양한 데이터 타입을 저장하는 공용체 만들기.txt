@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+void main() {
+
+	union uvar {
+		int intVal;
+		float floatVal;
+		char charVal;
+	};
+	
+	union uvar u;
+	
+	printf("intVal : ");
+	scanf("%d", &u.intVal);
+	
+	printf("\nfloatVal : ");
+	scanf("%f", &u.floatVal);
+	
+	getchar();
+	printf("\ncharVal :");
+	scanf("%c", &u.charVal);
+	
+	printf("intVal : %d addr : %d\n", u.intVal, &u.intVal);
+	printf("floatVal : %f addr : %d\n", u.floatVal, &u.floatVal);
+	printf("charVal : %c addr : %d", u.charVal, &u.charVal);
+}    
