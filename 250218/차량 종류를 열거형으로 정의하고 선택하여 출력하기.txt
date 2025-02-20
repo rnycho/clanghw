@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <string.h>
+
+void main() {
+    
+    enum CarType {
+    SEDAN = 1,
+    SUV = 2,
+    TRUCK = 3,
+    VAN = 4
+    };
+    
+    const char* sedan[] = {"avante", "sonata"};
+    const char* suv[] = {"santafe", "tucson"};
+    const char* truck[] = {"poter"};
+    const char* van[] = {"damas"};
+    
+    int sedanSize = sizeof(sedan) / sizeof(sedan[0]);
+    int suvSize = sizeof(suv) / sizeof(suv[0]);
+    int truckSize = sizeof(truck) / sizeof(truck[0]);
+    int vanSize = sizeof(van) / sizeof(van[0]);
+
+    char carName[50];
+    printf("차량 종류를 입력하세요 (예: avante, santafe): ");
+    scanf("%s", carName);
+
+    enum CarType chk = 0;
+    
+    if (chk == 0) {
+        for (int i = 0; i < sedanSize; i++) {
+            if (strcmp(carName, sedan[i]) == 0) {    
+                chk = SEDAN;
+                break;
+            }
+        }
+    }
+    if (chk == 0) {
+        for (int i = 0; i < suvSize; i++) {
+            if (strcmp(carName, suv[i]) == 0) {
+                chk = SUV;
+                break;
+            }
+        }
+    }
+    if (chk == 0) {
+        for (int i = 0; i < truckSize; i++) {
+            if (strcmp(carName, truck[i]) == 0) {
+                chk = TRUCK;
+                break;
+            }
+        }
+    }
+    if (chk == 0) {
+        for (int i = 0; i < vanSize; i++) {
+            if (strcmp(carName, van[i]) == 0) {
+                chk = VAN;
+                break;
+            }
+        }
+    }  
+
+    switch (chk) {
+        case SEDAN:
+            printf("입력한 차량: %s, 종류: SEDAN\n", carName);
+            break;
+        case SUV:
+            printf("입력한 차량: %s, 종류: SUV\n", carName);
+            break;
+        case TRUCK:
+            printf("입력한 차량: %s, 종류: TRUCK\n", carName);
+            break;
+        case VAN:
+            printf("입력한 차량: %s, 종류: VAN\n", carName);
+            break;
+        default:
+            printf("알 수 없는 차량 종류입니다.\n");
+    }
+}
